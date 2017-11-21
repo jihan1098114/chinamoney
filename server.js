@@ -50,5 +50,18 @@ const run = async (date) => {
   }
   //await page.close()
 }
-//run('2017-11-17')
+
 module.exports = run
+
+let startDate = new Date('2017-11-01')
+let now = new Date()
+
+const test = async () => {
+  while (startDate <= now) {
+    let dateString = startDate.format('yyyy-MM-dd')
+    let res = await run(dateString)
+    console.log(res)
+    startDate = new Date(startDate.setDate(startDate.getDate() + 1))
+  }
+}
+test()
