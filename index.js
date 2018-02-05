@@ -101,6 +101,6 @@ const run = async () => {
 
     startDate = new Date(startDate.setDate(startDate.getDate() + 1))
   }
-}
+};
 
 run();
